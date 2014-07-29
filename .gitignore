@@ -28,8 +28,3 @@ _ReSharper*/
 *.vssscc
 $tf*/
 packages/
-fonts/
-Content/
-Scripts/
-*.js
-*.js.map
