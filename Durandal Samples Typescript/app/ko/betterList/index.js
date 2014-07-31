@@ -1,27 +1,32 @@
-﻿define(['knockout'], function (ko) {
-    var itemToAdd = ko.observable("");
-    var allItems = ko.observableArray(["Fries", "Eggs Benedict", "Ham", "Cheese"]);
-    var selectedItems = ko.observableArray(["Ham"]);
+﻿define(["require", "exports", 'knockout'], function(require, exports, ko) {
+    var Index = (function () {
+        function Index() {
+            var _this = this;
+            this.itemToAdd = ko.observable("");
+            this.allItems = ko.observableArray(["Fries", "Eggs Benedict", "Ham", "Cheese"]);
+            this.selectedItems = ko.observableArray(["Ham"]);
+            this.addItem = function () {
+                var value = _this.itemToAdd();
 
-    return {
-        itemToAdd: itemToAdd,
-        allItems: allItems,
-        selectedItems: selectedItems,
-        addItem: function () {
-            var value = itemToAdd();
+                if (value != "" && _this.allItems.indexOf(value) < 0) {
+                    _this.allItems.push(value);
+                }
 
-            if (value != "" && allItems.indexOf(value) < 0){ // Prevent blanks and duplicates
-                allItems.push(value);
-            }
-
-            itemToAdd(""); // Clear the text box
-        },
-        removeSelected: function () {
-            allItems.removeAll(selectedItems());
-            selectedItems([]); // Clear selection
-        },
-        sortItems: function () {
-            allItems.sort();
+                _this.itemToAdd(""); // Clear the text box
+            };
+            this.removeSelected = function () {
+                _this.allItems.removeAll(_this.selectedItems());
+                _this.selectedItems([]); // Clear selection
+            };
+            this.sortItems = function () {
+                _this.allItems.sort();
+            };
         }
-    }
+        return Index;
+    })();
+
+    var instance = new Index();
+    
+    return instance;
 });
+//# sourceMappingURL=index.js.map

@@ -32,7 +32,7 @@
     <Content Include="app\ko\animatedTrans\index.html" />
     <Content Include="app\ko\animatedTrans\index.js" />
     <Content Include="app\ko\betterList\index.html" />
-    <Content Include="app\ko\betterList\index.js" />
+    <TypeScriptCompile Include="app\ko\betterList\index.ts" />
     <Content Include="app\ko\clickCounter\index.html" />
     <TypeScriptCompile Include="app\ko\clickCounter\index.ts" />
     <Content Include="app\ko\collections\index.html" />
