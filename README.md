@@ -1,4 +1,4 @@
-Durandal-Samples-Typescript
+Durandal Samples Typescript
 ===========================
 
 Durandal Samples project using Typescript
