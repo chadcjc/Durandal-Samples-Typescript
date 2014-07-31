@@ -1,25 +1,23 @@
-﻿define(['durandal/system', 'knockout'], function(system, ko) {
-    var firstVm = ko.observable();
+﻿define(["require", "exports", 'durandal/system'], function(require, exports, system) {
+    var First = (function () {
+        function First() {
+            var _this = this;
+            this.title = 'First Tab';
+            this.activate = function (id) {
+                system.log('First Tab Activated');
+                return _this.loadObservables(id);
+            };
+            this.deactivate = function () {
+                system.log('First Tab Deactivated');
+            };
+            this.loadObservables = function (id) {
+                _this.firstVm({ id: id, name: 'First Tab Content' });
+            };
+        }
+        return First;
+    })();
 
-    var vm = {
-        activate:activate,
-        title:'First Tab',
-        deactivate:deactivate,
-        firstVm:firstVm,
-    };
-
-    return vm;
-
-    function activate(id) {
-        system.log('First Tab Activated');
-        return loadObservables(id);
-    }
-
-    function deactivate() {
-        system.log('First Tab Deactivated');
-    }
-
-    function loadObservables(id) {
-        firstVm({ id:id, name:'First Tab Content' });
-    }
+    
+    return First;
 });
+//# sourceMappingURL=first.js.map

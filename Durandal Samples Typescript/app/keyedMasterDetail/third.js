@@ -1,25 +1,23 @@
-﻿define(['durandal/system', 'knockout'], function(system, ko) {
-    var thirdVm = ko.observable();
+﻿define(["require", "exports", 'durandal/system'], function(require, exports, system) {
+    var Third = (function () {
+        function Third() {
+            var _this = this;
+            this.title = 'Third Tab';
+            this.activate = function (id) {
+                system.log('Third Tab Activated');
+                return _this.loadObservables(id);
+            };
+            this.deactivate = function () {
+                system.log('Third Tab Deactivated');
+            };
+            this.loadObservables = function (id) {
+                _this.thirdVm({ id: id, name: 'Third Tab Content' });
+            };
+        }
+        return Third;
+    })();
 
-    var vm = {
-        activate:activate,
-        title:'Third Tab',
-        deactivate:deactivate,
-        thirdVm:thirdVm,
-    };
-
-    return vm;
-
-    function activate(id) {
-        system.log('Third Tab Activated', null, 'details', true);
-        return loadObservables(id);
-    }
-
-    function deactivate() {
-        system.log('Third Tab Deactivated', null, 'details', true);
-    }
-
-    function loadObservables(id) {
-        thirdVm({ id:id, name:'Third Tab Content' });
-    }
+    
+    return Third;
 });
+//# sourceMappingURL=third.js.map

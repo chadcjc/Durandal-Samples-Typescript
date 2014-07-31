@@ -1,34 +1,32 @@
-﻿define(['plugins/router', 'knockout', 'durandal/system'], function(router, ko, system) {
-    var masterVm = ko.observable();
+﻿define(["require", "exports", 'plugins/router', 'durandal/system'], function(require, exports, router, system) {
+    var Master = (function () {
+        function Master() {
+            var _this = this;
+            this.activate = function (id) {
+                system.log('Master View ' + id + ' Activated');
+                return _this.loadObservables(id);
+            };
+            this.deactivate = function () {
+                system.log('Master View ' + _this.masterVm().id + ' Deactivated');
+            };
+            this.loadObservables = function (id) {
+                _this.masterVm({ id: id, name: 'Master' });
+            };
+            var routerSettings = { moduleId: 'keyedMasterDetail', fromParent: true, dynamicHash: ':id' };
 
-    var childRouter = router
-        .createChildRouter()
-        .makeRelative({ moduleId:'keyedMasterDetail', fromParent:true, dynamicHash:':id' })
-        .map([
-            { route: ['first', ''], moduleId: 'first',  title: 'First', nav: true, hash: '#first' },
-            { route:'second',       moduleId:'second',  title:'Second', nav:true },
-            { route:'third',        moduleId:'third',   title:'Third',  nav:true }
-        ]).buildNavigationModel();
+            var configs = [
+                { route: ['first', ''], moduleId: 'first', title: 'First', nav: true, hash: '#first' },
+                { route: 'second', moduleId: 'second', title: 'Second', nav: true },
+                { route: 'third', moduleId: 'third', title: 'Third', nav: true }
+            ];
 
-    var vm = {
-        router:childRouter,
-        activate:activate,
-        deactivate:deactivate,
-        masterVm:masterVm
-    };
+            this.router = router.createChildRouter().makeRelative(routerSettings).map(configs).buildNavigationModel();
+        }
+        return Master;
+    })();
 
-    return vm;
-
-    function activate(id) {
-        system.log('Master View ' + id + ' Activated');
-        return loadObservables(id);
-    }
-
-    function deactivate() {
-        system.log('Master View ' + masterVm().id + ' Deactivated');
-    }
-
-    function loadObservables(id) {
-        masterVm({ id:id, name:'Master' });
-    }
+    var instance = new Master();
+    
+    return instance;
 });
+//# sourceMappingURL=master.js.map
