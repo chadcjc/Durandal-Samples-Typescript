@@ -42,8 +42,9 @@
     <Content Include="app\ko\controlTypes\index.html" />
     <Content Include="app\ko\controlTypes\index.js" />
     <Content Include="app\ko\gridEditor\index.html" />
-    <Content Include="app\ko\gridEditor\index.js" />
+    <TypeScriptCompile Include="app\ko\gridEditor\index.ts" />
     <Content Include="app\ko\helloWorld\index.html" />
+    <TypeScriptCompile Include="app\ko\gridEditor\interface.ts" />
     <TypeScriptCompile Include="app\ko\helloWorld\index.ts" />
     <Content Include="app\ko\index.html" />
     <Content Include="app\ko\pagedGrid\index.html" />
