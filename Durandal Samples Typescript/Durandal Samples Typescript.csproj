@@ -40,7 +40,7 @@
     <Content Include="app\ko\contactsEditor\index.html" />
     <Content Include="app\ko\contactsEditor\index.js" />
     <Content Include="app\ko\controlTypes\index.html" />
-    <Content Include="app\ko\controlTypes\index.js" />
+    <TypeScriptCompile Include="app\ko\controlTypes\index.ts" />
     <Content Include="app\ko\gridEditor\index.html" />
     <TypeScriptCompile Include="app\ko\gridEditor\index.ts" />
     <Content Include="app\ko\helloWorld\index.html" />

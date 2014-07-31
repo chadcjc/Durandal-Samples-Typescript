@@ -8,9 +8,8 @@
             this.removeGift = function (gift) {
                 _this.gifts.remove(gift);
             };
-            this.save = function (form) {
+            this.save = function () {
                 //alert("Could now transmit to server: ");
-                console.log(form);
                 app.showMessage('You could now send this to server: ' + ko.utils.stringifyJson(_this.gifts()), 'Grid Editor - Results');
                 // To actually transmit to server as a regular form post, write this: ko.utils.postJson($("form")[0], self.gifts);
             };
