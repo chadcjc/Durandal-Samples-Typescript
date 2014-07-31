@@ -1,0 +1,43 @@
+﻿import ko = require('knockout');
+
+class SimpleGrid {
+    data: KnockoutObservableArray<IItem>;
+    currentPageIndex: KnockoutObservable<number>;
+    pageSize: number;
+    columns: IColumn[];
+    itemsOnCurrentPage: KnockoutComputed<IItem[]>;
+    maxPageIndex: KnockoutComputed<number>;
+
+    constructor(configuration: IGridConfiguration) {
+        this.data = configuration.data;
+        this.currentPageIndex = ko.observable(0);
+        this.pageSize = configuration.pageSize || 5;
+
+        // If you don't specify columns configuration, we'll use scaffolding
+        this.columns = configuration.columns || this.getColumnsForScaffolding(ko.utils.unwrapObservable(this.data));
+
+        this.itemsOnCurrentPage = ko.computed(() => {
+            var startIndex = this.pageSize * this.currentPageIndex();
+            return this.data.slice(startIndex, startIndex + this.pageSize);
+        });
+
+        this.maxPageIndex = ko.computed(() => {
+            return Math.ceil(ko.utils.unwrapObservable(this.data).length / this.pageSize) - 1;
+        });
+    }
+
+    getColumnsForScaffolding = (data: IItem[]): IColumn[]=> {
+        var columns: IColumn[] = [];
+        if ((typeof data.length !== 'number') || data.length === 0) {
+            return columns;
+        }
+
+        for (var propertyName in data[0]) {
+            columns.push({ headerText: propertyName, rowText: propertyName });
+        }
+
+        return columns;
+    };
+}
+
+export = SimpleGrid;

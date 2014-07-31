@@ -47,9 +47,10 @@
     <Content Include="app\ko\helloWorld\index.js" />
     <Content Include="app\ko\index.html" />
     <Content Include="app\ko\pagedGrid\index.html" />
-    <Content Include="app\ko\pagedGrid\index.js" />
+    <TypeScriptCompile Include="app\ko\pagedGrid\index.ts" />
     <Content Include="app\ko\pagedGrid\simpleGrid.html" />
-    <Content Include="app\ko\pagedGrid\simpleGrid.js" />
+    <TypeScriptCompile Include="app\ko\pagedGrid\interface.ts" />
+    <TypeScriptCompile Include="app\ko\pagedGrid\simpleGrid.ts" />
     <Content Include="app\ko\shoppingCart\index.html" />
     <Content Include="app\ko\simpleList\index.html" />
     <TypeScriptCompile Include="app\ko\shoppingCart\models.ts" />
