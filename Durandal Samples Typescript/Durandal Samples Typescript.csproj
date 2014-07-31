@@ -38,8 +38,9 @@
     <Content Include="app\ko\collections\index.html" />
     <Content Include="app\ko\collections\index.js" />
     <Content Include="app\ko\contactsEditor\index.html" />
-    <Content Include="app\ko\contactsEditor\index.js" />
+    <TypeScriptCompile Include="app\ko\contactsEditor\index.ts" />
     <Content Include="app\ko\controlTypes\index.html" />
+    <TypeScriptCompile Include="app\ko\contactsEditor\interface.ts" />
     <TypeScriptCompile Include="app\ko\controlTypes\index.ts" />
     <Content Include="app\ko\gridEditor\index.html" />
     <TypeScriptCompile Include="app\ko\gridEditor\index.ts" />
