@@ -16,7 +16,6 @@
     }
 });
 
-define(function (require) {
-    var startup = require('startup');
+define(['./startup'], startup => {
     startup.start();
 });

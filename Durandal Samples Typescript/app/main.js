@@ -16,8 +16,7 @@
     }
 });
 
-define(function (require) {
-    var startup = require('startup');
+define(['./startup'], function (startup) {
     startup.start();
 });
 //# sourceMappingURL=main.js.map
