@@ -1,16 +1,18 @@
-﻿define(['knockout'], function (ko) {
-    var firstName = ko.observable("Planet"),
-        lastName = ko.observable("Earth");
+﻿define(["require", "exports", 'knockout'], function(require, exports, ko) {
+    var Index = (function () {
+        function Index() {
+            var _this = this;
+            this.firstName = ko.observable("Planet");
+            this.lastName = ko.observable("Earth");
+            this.fullName = ko.computed(function () {
+                return _this.firstName() + " " + _this.lastName();
+            });
+        }
+        return Index;
+    })();
 
-    var fullName = ko.computed(function () {
-        // Knockout tracks dependencies automatically.
-        // It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
-        return firstName() + " " + lastName();
-    });
-
-    return  {
-        firstName: firstName,
-        lastName: lastName,
-        fullName: fullName
-    }
+    var instance = new Index();
+    
+    return instance;
 });
+//# sourceMappingURL=index.js.map
