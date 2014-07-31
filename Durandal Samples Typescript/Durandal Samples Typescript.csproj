@@ -94,6 +94,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="app\widgets\Readme.md" />
+    <None Include="dts-samples.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Content\durandal.css" />
     <Content Include="Content\images\icon.png" />

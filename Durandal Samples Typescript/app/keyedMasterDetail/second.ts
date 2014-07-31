@@ -3,7 +3,7 @@ import ko = require('knockout');
 
 class Second {
     title = 'Second Tab';
-    secondVm: KnockoutObservable<IContent>;
+    secondVm: KnockoutObservable<IContent> = ko.observable(null);
 
     activate= (id: string) => {
         system.log('Second Tab Activated');
@@ -15,7 +15,7 @@ class Second {
     }
 
     loadObservables = (id: string) => {
-        this.secondVm({ id: id, name: 'Second Tab Content' });
+        return this.secondVm({ id: id, name: 'Second Tab Content' });
     }
 }
 

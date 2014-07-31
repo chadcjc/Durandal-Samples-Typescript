@@ -3,9 +3,9 @@ import ko = require('knockout');
 
 class First {
     title = 'First Tab';
-    firstVm: KnockoutObservable<IContent>;
+    firstVm: KnockoutObservable<IContent> = ko.observable(null);
 
-    activate= (id: string) => {
+    activate = (id: string) => {
         system.log('First Tab Activated');
         return this.loadObservables(id);
     };
@@ -15,7 +15,7 @@ class First {
     }
 
     loadObservables = (id: string) => {
-        this.firstVm({ id: id, name: 'First Tab Content' });
+        return this.firstVm({ id: id, name: 'First Tab Content' });
     }
 }
 

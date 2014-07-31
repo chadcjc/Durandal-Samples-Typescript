@@ -4,7 +4,7 @@ import system = require('durandal/system');
 
 class Master {
     router: DurandalRouter;
-    masterVm: KnockoutObservable<IContent>;
+    masterVm: KnockoutObservable<IContent> = ko.observable(null);
 
     constructor() {
         var routerSettings: DurandalRelativeRouteSettings = { moduleId: 'keyedMasterDetail', fromParent: true, dynamicHash: ':id' };
@@ -31,7 +31,7 @@ class Master {
     }
 
     loadObservables = (id: string) => {
-        this.masterVm({ id: id, name:'Master' });
+        return this.masterVm({ id: id, name: 'Master' });
     }
 }
 

@@ -1,8 +1,9 @@
-﻿define(["require", "exports", 'durandal/system'], function(require, exports, system) {
+﻿define(["require", "exports", 'durandal/system', 'knockout'], function(require, exports, system, ko) {
     var First = (function () {
         function First() {
             var _this = this;
             this.title = 'First Tab';
+            this.firstVm = ko.observable(null);
             this.activate = function (id) {
                 system.log('First Tab Activated');
                 return _this.loadObservables(id);
@@ -11,7 +12,7 @@
                 system.log('First Tab Deactivated');
             };
             this.loadObservables = function (id) {
-                _this.firstVm({ id: id, name: 'First Tab Content' });
+                return _this.firstVm({ id: id, name: 'First Tab Content' });
             };
         }
         return First;
