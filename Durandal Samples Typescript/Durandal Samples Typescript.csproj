@@ -34,7 +34,7 @@
     <Content Include="app\ko\betterList\index.html" />
     <Content Include="app\ko\betterList\index.js" />
     <Content Include="app\ko\clickCounter\index.html" />
-    <Content Include="app\ko\clickCounter\index.js" />
+    <TypeScriptCompile Include="app\ko\clickCounter\index.ts" />
     <Content Include="app\ko\collections\index.html" />
     <TypeScriptCompile Include="app\ko\collections\index.ts" />
     <Content Include="app\ko\contactsEditor\index.html" />
