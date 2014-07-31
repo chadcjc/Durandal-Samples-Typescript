@@ -1,20 +1,18 @@
-﻿define(['durandal/system', 'knockout'], function(system, ko) {
-    // Define a "Person" class that tracks its own name and children, and has a method to add a new child
-    var Person = function (name, children) {
-        this.name = name;
-        this.children = ko.observableArray(children);
+﻿define(["require", "exports", 'knockout', './person'], function(require, exports, ko, person) {
+    var Index = (function () {
+        function Index() {
+            this.showRenderTimes = ko.observable(false);
+            this.people = ko.observableArray([
+                new person("Annabelle", ["Arnie", "Anders", "Apple"]),
+                new person("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
+                new person("Charles", ["Cayenne", "Cleopatra"])
+            ]);
+        }
+        return Index;
+    })();
 
-        this.addChild = function () {
-            this.children.push("New Child");
-        }.bind(this);
-    };
-
-    return {
-        people:[
-            new Person("Annabelle", ["Arnie", "Anders", "Apple"]),
-            new Person("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
-            new Person("Charles", ["Cayenne", "Cleopatra"])
-        ],
-        showRenderTimes : ko.observable(false)
-    }
+    var instance = new Index();
+    
+    return instance;
 });
+//# sourceMappingURL=index.js.map

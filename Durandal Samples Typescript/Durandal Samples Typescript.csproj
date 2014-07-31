@@ -36,8 +36,9 @@
     <Content Include="app\ko\clickCounter\index.html" />
     <Content Include="app\ko\clickCounter\index.js" />
     <Content Include="app\ko\collections\index.html" />
-    <Content Include="app\ko\collections\index.js" />
+    <TypeScriptCompile Include="app\ko\collections\index.ts" />
     <Content Include="app\ko\contactsEditor\index.html" />
+    <TypeScriptCompile Include="app\ko\collections\person.ts" />
     <TypeScriptCompile Include="app\ko\contactsEditor\index.ts" />
     <Content Include="app\ko\controlTypes\index.html" />
     <TypeScriptCompile Include="app\ko\contactsEditor\interface.ts" />
