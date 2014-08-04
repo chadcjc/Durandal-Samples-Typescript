@@ -17,11 +17,13 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\anotherSubscriber\index.html" />
     <Content Include="app\eventAggregator\index.html" />
     <Content Include="app\eventAggregator\publisher.html" />
     <Content Include="app\eventAggregator\subscriber.html" />
     <Content Include="app\hello\index.html" />
     <Content Include="app\keyedMasterDetail\first.html" />
+    <TypeScriptCompile Include="app\anotherSubscriber\index.ts" />
     <TypeScriptCompile Include="app\keyedMasterDetail\first.ts" />
     <Content Include="app\keyedMasterDetail\master.html" />
     <TypeScriptCompile Include="app\keyedMasterDetail\master.ts" />
@@ -163,6 +165,7 @@
     <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

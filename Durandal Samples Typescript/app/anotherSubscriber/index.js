@@ -1,7 +1,6 @@
-﻿define(["require", "exports", './publisher', './subscriber'], function(require, exports, publisher, subscriber) {
+﻿define(["require", "exports", '../eventAggregator/subscriber'], function(require, exports, subscriber) {
     var Index = (function () {
         function Index() {
-            this.publisher = new publisher();
             this.subscriber = new subscriber();
         }
         return Index;

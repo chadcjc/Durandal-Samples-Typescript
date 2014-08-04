@@ -2,8 +2,8 @@
 import subscriber = require('./subscriber');
 
 class Index {
-    publisher = publisher;
-    subscriber = subscriber;
+    publisher = new publisher();
+    subscriber = new subscriber();
 }
 
 var instance: ISingleton = new Index();

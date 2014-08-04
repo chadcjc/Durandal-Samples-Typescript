@@ -4,6 +4,7 @@ import ko = require('knockout');
 class Subscriber {
     received: KnockoutObservableArray<string>;
     subscription: KnockoutObservable<DurandalEventSubscription>;
+
     constructor() {
         this.received = ko.observableArray([]);
         this.subscription = ko.observable(null);
